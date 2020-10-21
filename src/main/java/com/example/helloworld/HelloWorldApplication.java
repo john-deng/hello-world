@@ -19,6 +19,15 @@ public class HelloWorldApplication {
 		}
 	}
 
+	@RestController
+	@RequestMapping("/my")
+	class MyController {
+		@RequestMapping(value = "/", method = RequestMethod.GET)
+		public String say(String name) {
+			return "Hello" + name;
+		}
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(HelloWorldApplication.class, args);
 	}
